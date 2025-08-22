@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 import os
-CSRF_TRUSTED_ORIGINS = [os.getenv('CSRF_ORIGIN', 'https://donatify-ngo-4.onrender.com')]
+CSRF_TRUSTED_ORIGINS = [os.getenv('CSRF_ORIGIN', 'https://donatify-ngo-5.onrender.com')]
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
