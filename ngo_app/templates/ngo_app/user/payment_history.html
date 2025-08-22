@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation History</title>
+    {% include 'ngo_app/common/common_css.html' %}
+    
+</head>
+<body>
+    <!-- navbar start -->
+    {% include 'ngo_app/user/user_header.html' %}
+    <!-- navbar ends -->
+     
+    <div class="main-div">
+      <!-- <h1 style="text-align: center;color: brown;">Your Payment History</h1> -->
+      <h2 style="text-align: center;color: brown;margin: 80px;">Transaction History</h2>
+
+<table class="table" style="margin: 80px;">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Amount</th>
+      <th scope="col">TransactionNumber</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {% for  d in donation_key %}
+
+    <tr>
+
+        <th>{{d.user.name}}</th>
+        <th>{{d.amount}}</th>
+        <th>{{d.transaction_id}}</th>
+        {%if d.paymentstatus == 'Confirm' %}
+        <th style="color:green">{{d.paymentstatus}}</th>
+
+        {%else%}
+         <th style="color:rgb(206, 42, 42)">{{d.paymentstatus}}</th>
+
+        {%endif%}
+
+    </tr>
+
+    {%endfor %}
+
+    </tbody>
+    </table>
+        
+    </div>
+    {% include 'ngo_app/common/footer.html' %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

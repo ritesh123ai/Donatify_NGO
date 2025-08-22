@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About_us</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Common CSS -->
+    {% include 'ngo_app/common/common_css.html' %}
+
+    <!-- Custom Style -->
+    <style>
+
+        /* body {
+            backdrop-filter: brightness(0.9);
+        } */
+
+        .text-block {
+           
+            padding: 40px 0;
+        }
+
+        .text-block p{
+
+ color: rgb(82, 8, 17)!important ;
+ font-size: 24px;
+        }
+
+        .section-image {
+            width: 80%;
+            /* max-width: 90%; */
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        /* .section-header img {
+            max-width: 300px;
+        } */
+
+        .mission-text {
+            font-size: 1.1rem;
+            margin-top: 20px;
+            text-align: justify;
+            padding: 0 15px;
+        
+        }
+        .p{
+            color: brown
+    }    
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    {% include 'ngo_app/common/header.html' %}
+
+    <!-- Main Container -->
+    <div class="container-fluid px-4 text-dark">
+
+        <!-- About Us Header -->
+        <div class="text-center my-4 section-header">
+            <img src="{% static 'ngo_app/images/Know About US.gif' %}" alt="About Us" class="img-fluid">
+        </div>
+
+        <!-- Center Image -->
+        <div class="text-center mb-4">
+            <img src="{% static 'ngo_app/images/ngo9.jpg' %}" alt="NGO Image" class="section-image">
+        </div>
+
+        <!-- About Section -->
+        <div class="text-block">
+            <p>
+                Sahyog Foundation was initiated in 2002 when a group of friends came together with the intention of giving back to the society. They were inspired by the thought and philosophy of Peter Senge, the founder of the Society for Organizational Learning who has propagated that “sustainability, social equality and the environment are now business problems…” and corporate leaders can’t expect governments to solve them alone.
+            </p>
+            <p>
+                What triggered these thoughts was the liberalisation of the Indian economy in the 1990’s which brought with it immense opportunities. Business revived, and India became not just a market, but also an investment prospect for the developed world. Disposable incomes and early settlements became a living reality for the working middle-class. For the first time in India, professionals could think beyond making a living, and contribute towards the society.
+            </p>
+
+            <div class="text-center">
+                <img src="{% static 'ngo_app/images/ngoo3.jpg' %}" alt="Our Work" class="section-image">
+            </div>
+
+            <p>
+                Fuelled with enthusiasm, Sahyog’s founders gave a shape to their dream, and Sahyog Foundation was born. Over the last two decades, Sahyog has evolved as a sustainable Indian social institution – committed to do real work on the ground, and make the society and businesses inclusive in the process of bringing change.
+            </p>
+            <h1>ss</h1>
+            <p>
+                On our way, we had to make many difficult choices and constantly innovate – whether it was choosing to work on the ground through a service-delivery approach, practicing management principles and adopting a business-like approach in the development sector, creating a unique resource modeling keeping businesses at the centre, or promoting the concept of civic driven change. Yes, we almost always took the road less travelled, and as they say, that has made all the difference!
+            </p>
+        </div>
+
+        <!-- Vision Section -->
+        <div class="text-center my-4 section-header">
+            <img src="{% static 'ngo_app/images/Vision.gif' %}" alt="Vision" class="img-fluid">
+        </div>
+        <div class="text-block">
+            <p>
+                Work as a catalyst in bringing sustainable change in the lives of lesser privileged children and families with a life-cycle approach of development.
+            </p>
+            <p>
+                Enable the civil society across the world to engage proactively in the change process through the philosophy of civic driven change.
+            </p>
+            <p>
+                Adopt highest standards of governance to emerge as a leading knowledge and technology driven, innovative and scalable development institution.
+            </p>
+        </div>
+
+        <!-- Mission Section -->
+        <div class="text-center my-4 section-header">
+            <img src="{% static 'ngo_app/images/Mission.gif' %}" alt="Mission" class="img-fluid">
+        </div>
+        <div class="text-block">
+            <p>
+                To build a more compassionate and thriving society by ensuring access to basic necessities for every underprivileged individual. We strive to serve as a collaborative partner, working alongside schools, NGOs, corporates, and government agencies to implement impactful programs throughout India.
+            </p>
+            <p>
+                Through our collective efforts, we aim to uplift and empower marginalized communities, providing them with essential resources and opportunities. By fostering collaboration and leveraging partnerships, we are dedicated to creating a beautiful and equitable society where every individual can lead a dignified life.
+            </p>
+        </div>
+
+        <!-- Goal Section -->
+        <div class="text-center my-4 section-header">
+            <img src="{% static 'ngo_app/images/Goal.gif' %}" alt="Goal" class="img-fluid">
+        </div>
+        <div class="text-block">
+            <p>
+                Sahyog Foundation is to empower underprivileged children, youth and women through relevant education, innovative healthcare and market-focused livelihood programmes.
+            </p>
+            <p>
+                Sahyog Foundation is to deploy best possible methodology and technology for achieving ideal SROI (social return on investment), to practice and promote good governance. To link business competitiveness of the corporate with social development initiatives; also to sensitize privileged children, youth and citizens in general to promote Civic Driven Change.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    {% include 'ngo_app/common/footer.html' %}
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

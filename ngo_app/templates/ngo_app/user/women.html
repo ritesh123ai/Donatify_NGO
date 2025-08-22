@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women Empowerment</title>
+    {% include 'ngo_app/common/common_css.html' %}
+    <style>
+        .small-img {
+            width: 700px;
+            height: 350%;
+            display: block;
+            margin: 40px 50px 70px 110px ;
+            padding: 40px 40px 50px 60px ;
+            justify-content: center;
+        }
+
+        .content-container {
+            margin: 40px 0;
+        }
+
+        h2 {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: brown;
+            margin-top: 30px;
+        }
+
+        h1 {
+            margin: 30px 0;
+        }
+
+        .centered-imgs img {
+            max-width: 600px;
+            height: 500%;
+            margin: 10px;
+            border-radius: 8px;
+        }
+
+        .centered-imgs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        footer {
+            margin-top: 60px;
+        }
+
+        .container {
+            padding-bottom: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-div">
+        {% include 'ngo_app/common/header.html' %}
+
+        <div class="container">
+            <div class="text-center">
+                <h1>"Together We Rise, Together We Thrive"</h1>
+            </div>
+
+            <div class="centered-imgs">
+                <img src="{% static 'ngo_app/images/ngoo3.jpg' %}" alt="Empowerment Image 1">
+                <img src="{% static 'ngo_app/images/ngoo2.jpg' %}" alt="Empowerment Image 2">
+            </div>
+
+            <div class="content-container">
+                <h2>The Significance of Women Empowerment in India</h2>
+                <h3>
+                    Women empowerment can be defined as the process of equipping women with the knowledge, skills, resources, and agency to make informed decisions...
+                    <br><br>
+                    <strong>Challenges and Obstacles:</strong>
+                    <ul>
+                        <li>Gender-based Violence</li>
+                        <li>Limited Access to Education</li>
+                        <li>Gender Pay Gap</li>
+                        <li>Limited Political Representation</li>
+                        <li>Social Norms and Cultural Barriers</li>
+                    </ul>
+                </h3>
+
+                <h2>Types of Women Empowerments</h2>
+                <h3>
+                    Women’s empowerment can take various forms:
+                    <ul>
+                        <li><strong>Economic Empowerment:</strong> Access to jobs, finance, and independence.</li>
+                        <li><strong>Political Empowerment:</strong> Representation and leadership roles.</li>
+                        <li><strong>Social Empowerment:</strong> Challenging stereotypes and promoting equality.</li>
+                        <li><strong>Education Empowerment:</strong> Equal learning opportunities.</li>
+                        <li><strong>Legal Empowerment:</strong> Justice and legal rights awareness.</li>
+                    </ul>
+                </h3>
+
+                <h2>Importance of Women Empowerment</h2>
+                <h3>
+                    Women empowerment is crucial for community development:
+                    <ul>
+                        <li><strong>Economic Growth</strong></li>
+                        <li><strong>Social Progress</strong></li>
+                        <li><strong>Education and Skill Development</strong></li>
+                        <li><strong>Health and Well-being</strong></li>
+                        <li><strong>Leadership and Governance</strong></li>
+                    </ul>
+                </h3>
+
+                <!-- Small image shown nicely -->
+                <img src="{% static 'ngo_app/images/w11.png' %}" alt="Empowered Woman" class="small-img">
+                
+                
+                <h2> Factors That Encourage Women’s Empowerment</h2>
+                <h3>These key factors help build an environment that supports and promotes women's rights, equality, and opportunities:</h3>
+            <h2>1️⃣ Education</h2>
+                <h3>
+                    Women empowerment is crucial for community development:
+                    <ul>
+                        <li><strong>Access to quality education equips women with knowledge, skills, and critical thinking abilities</strong></li>
+                        <li><strong>Helps them challenge societal stereotypes and make informed decisions.</strong></li>
+                        <li><strong>Encourages active participation in social, economic, and political life.</strong></li>
+                        
+                    </ul>
+                </h3>
+                <h3>
+                    Legal and Policy Frameworks
+                    <ul>
+                        <li><strong>Strong laws and gender-sensitive policies ensure women’s rights and safety.</strong> </li>
+                        <li><strong>Help address issues like gender-based violence, discrimination, and unequal access</strong> </li>
+                        <li><strong>Social Empowerment:</strong> Challenging stereotypes and promoting equality.</li>
+                        <li><strong>Enable women to exercise their legal rights and freedoms fully.</strong> </li>
+                    </ul>
+                </h3>
+                <h3>
+                    Economic Opportunities
+                    <ul>
+                        <li><strong>Equal access to employment, entrepreneurship, and financial services empowers women economically <strong></li>
+                        <li> <strong>Financial independence leads to greater decision-making power in both family and society.<strong></li>
+                        <li> <strong>Women contribute to community and national economic development<strong></li>
+                    </ul>
+                </h3>
+                <h3>
+                        Conclusion
+                    <ul>
+                        <li><strong>Women’s empowerment is vital for gender equality and national progress. <strong></li>
+                        <li> <strong>Grassroots organizations like Mahila Housing Trust and similar NGOs play a crucial role.<strong></li>
+                        <li> <strong>Their localized approach and community-level initiatives help provide:
+
+<strong>Resources,Skills,Opportunities</li>
+                        <li> <strong>These programs empower women to live independent, confident, and meaningful lives, while actively participating in the development of their families and communities.<strong></li>
+                    </ul>
+                </h3>
+                </div>
+        <div> <br>
+            <h3>Leave a Comment Here </h3>
+            <h4>Your email address will not be published. Required fields are marked * </h4>
+        <div class="form-floating">
+  <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+  <label for="floatingTextarea2">Comments</label>
+</div>
+<div class="form-floating mb-3">
+  <input type="text" class="form-control" id="floatingInput" placeholder="name" required>
+  <label for="floatingInput">Name</label>
+</div>
+<div class="form-floating mb-3">
+  <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
+  <label for="floatingInput">Email address</label>
+</div>
+<div >
+    <button type="submit" class="btn btn-primary">submit</button>
+  </div>
+        </div>
+        </div>
+
+        {% include 'ngo_app/common/footer.html' %}
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

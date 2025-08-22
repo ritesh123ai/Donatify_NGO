@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Welfare</title>
+    {% include 'ngo_app/common/common_css.html' %}
+
+    <style>
+        body, html {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-color: white; /* Full page white background */
+        }
+
+        .main-div {
+            flex: 1;
+        }
+
+        * {
+            font-family: cursive;
+            box-sizing: border-box;
+            color: black;
+        }
+
+        .content img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        /* Carousel background white */
+        .carousel {
+            background-color: white;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        /* Carousel images bigger */
+        .carousel-item img {
+            height: 500px; /* Adjust height as needed */
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .image-row {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        footer {
+            margin-top: auto;
+        }
+    </style>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="main-div">
+    {% include 'ngo_app/common/header.html' %}
+
+    <div class="content container py-4">
+      <h1 style="text-align: center; color: brown;">"Animals Are Not Ours to Harm"</h1>
+
+      <div style="text-align: center;">
+        <img src="{% static 'ngo_app/images/a0.jpg' %}" alt="Empowerment Image 1">
+      </div>
+
+      <h2>Animal Welfare in Sehyog Foundation</h2>
+      <p>
+        At Sehyog Foundation, animal welfare is not just a cause—it is a commitment to compassion, respect, and responsibility towards all living beings. The foundation believes that animals deserve the same level of empathy and care that we offer to humans. With this core belief, Sehyog Foundation actively engages in various initiatives aimed at protecting and promoting the well-being of animals, especially those that are vulnerable, abandoned, or mistreated.
+      </p>
+
+      <p>
+        One of the key aspects of our animal welfare mission is rescue and shelter services. Sehyog Foundation operates a volunteer-led rescue network that responds to calls about injured, sick, or stray animals in distress. Many of these animals are treated by qualified veterinarians and given a second chance at life through our rehabilitation programs.
+      </p>
+
+      <p>
+        Another major focus is creating awareness about animal cruelty and responsible pet ownership. Sehyog Foundation conducts educational workshops in schools, colleges, and communities to sensitize people about the ethical treatment of animals.
+      </p>
+
+      <!-- Carousel -->
+      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{% static 'ngo_app/images/ngo9.jpg' %}" class="d-block w-100" alt="Animal Rescue">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'ngo_app/images/a1.jpeg' %}" class="d-block w-100" alt="Animal Care">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'ngo_app/images/a5.jpg' %}" class="d-block w-100" alt="Animal Protection">
+          </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <p>
+        We also work closely with local authorities and animal rights bodies to advocate for stronger enforcement of animal protection laws. Sehyog Foundation has been actively involved in reporting cases of animal abuse and pushing for legal actions where necessary.
+      </p>
+
+      <p>
+        In addition to direct action, the foundation also supports sterilization and vaccination drives to control the stray animal population humanely and to prevent the spread of diseases like rabies.
+      </p>
+
+      <p>
+        Animal welfare at Sehyog Foundation is a holistic movement that combines compassion with action, awareness with education, and rescue with rehabilitation.
+      </p>
+    </div>
+
+    {% include 'ngo_app/common/footer.html' %}
+  </div>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

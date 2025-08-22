@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login</title>
+  {% include 'ngo_app/common/common_css.html' %}
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-image: url("{% static 'ngo_app/images/ngo11.jpg' %}");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      backdrop-filter: blur(3px);
+    }
+
+    .main-div {
+      padding: 50px 0;
+    }
+
+    .flex-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      padding: 40px;
+      flex-wrap: wrap;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 20px;
+      width: 80%;
+      margin: auto;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .div-img {
+      width: 300px;
+      height: 300px;
+      overflow: hidden;
+      border-radius: 50%;
+      border: 5px solid sandybrown;
+    }
+
+    .div-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease-in-out;
+    }
+
+    .div-img img:hover {
+      transform: scale(1.05);
+    }
+
+    .div-form {
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .div-form .form-control {
+      border-radius: 10px;
+      padding: 12px;
+      font-size: 16px;
+    }
+
+    .div-form .input-group-text {
+      border-radius: 10px 0 0 10px;
+    }
+
+    .btn-danger {
+      width: 100%;
+      padding: 12px;
+      font-size: 18px;
+      border-radius: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-danger:hover {
+      background-color: #c82333;
+    }
+
+    .alert {
+      margin-top: 20px;
+      font-size: 20px;
+    }
+
+    .text-center img {
+      width: 250px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- navbar -->
+  {% include 'ngo_app/common/header.html' %}
+
+  <!-- messages -->
+  {% if messages %}
+    {% for m in messages %}
+      <div class="alert alert-danger alert-dismissible fade show text-center" role="alert" style="width: 50%; margin: auto;">
+        <strong>{{ m }}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {% endfor %}
+  {% endif %}
+
+  <!-- login content -->
+  <div class="main-div">
+    <div class="text-center">
+      <img src="{% static 'ngo_app/images/LOGIN.gif' %}" alt="Login GIF" />
+    </div>
+
+    <div class="flex-container">
+      <div class="div-img">
+        <img src="{% static 'ngo_app/images/logo4.jpeg' %}" alt="Login Image" />
+      </div>
+
+      <div class="div-form">
+        <form action="/user-login/" method="post">
+          {% csrf_token %}
+          <div class="input-group mb-3">
+            <span class="input-group-text"><i class="fa-solid fa-envelope"></i></span>
+            <input type="text" class="form-control" placeholder="Username" name="email" required />
+          </div>
+
+          <div class="input-group mb-4">
+            <span class="input-group-text"><i class="fa-solid fa-key"></i></span>
+            <input type="password" class="form-control" placeholder="Password" name="password" required />
+          </div>
+
+          <button type="submit" class="btn btn-danger">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  {% include 'ngo_app/common/footer.html' %}
+
+  <!-- scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous">
+  </script>
+</body>
+</html>

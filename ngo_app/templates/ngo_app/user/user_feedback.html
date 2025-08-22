@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Feedback Form</title>
+  {% include 'ngo_app/common/common_css.html' %}
+
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    .bg-image {
+      background-image: url("{% static 'ngo_app/images/ngo11.jpg' %}");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    .feedback-wrapper {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 20px;
+    }
+
+    .form-box {
+      width: 100%;
+      max-width: 500px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+      color: white;
+    }
+
+    .form-box h1 {
+      font-size: 30px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 25px;
+      color: #ffc107;
+    }
+
+    .form-control,
+    .form-select {
+      background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    .form-floating label {
+      color: #333;
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      background-color: #ffc107;
+      border: none;
+      color: black;
+      font-weight: bold;
+      border-radius: 25px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-submit:hover {
+      background-color: #e0a800;
+    }
+
+    @media (max-width: 576px) {
+      .form-box {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  {% include 'ngo_app/common/header.html' %}
+
+  <!-- Feedback Form -->
+  {% if messages %}
+  
+  {% for m in messages %}
+
+  <div class="alert alert-danger alert-dismissible fade show" role="alert" style="width: 50%;margin: auto; text-align: center; font-size: 44px;">
+  <strong>{{m}}</strong>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+  <!-- <h1 style="text-align: center;">{{m}}</h1> -->
+  <!-- message ko print krne ke liye double curly bracket use krte hai -->
+  
+  
+  {% endfor %}
+  
+  {% endif %}
+
+  <form method="post">
+    {% csrf_token %}
+    <div class="feedback-wrapper">
+      <div class="form-box">
+        <h1>Your Feedback</h1>
+
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="floatingName" name="name" placeholder="Your Name" required>
+          <label for="floatingName">Name</label>
+        </div>
+
+        <!-- <div class="form-floating mb-3">
+          <input type="email"  class="form-control" id="floatingEmail" name="email" placeholder="name@example.com" required>
+          <label for="floatingEmail">Email</label>
+        </div> -->
+
+        <div class="form-floating mb-3">
+          <select class="form-select" id="floatingRating" name="rating" required>
+            <option selected disabled value="">Select Rating</option>
+            <option value="⭐">*</option>
+            <option value="⭐⭐">**</option>
+            <option value="⭐⭐⭐">***</option>
+            <option value="⭐⭐⭐⭐">****</option>
+            <option value="⭐⭐⭐⭐⭐">*****</option>
+          </select>
+          <label for="floatingRating">Rating</label>
+        </div>
+
+        <div class="form-floating mb-3">
+          <textarea class="form-control" id="floatingRemark" name="remark" placeholder="Leave your comment here" style="height: 100px" required></textarea>
+          <label for="floatingRemark">Remark</label>
+        </div>
+
+        <button type="submit" class="btn btn-submit">Submit</button>
+      </div>
+    </div>
+  </form>
+
+  <!-- Footer -->
+  {% include 'ngo_app/common/footer.html' %}
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+</body>
+</html>
